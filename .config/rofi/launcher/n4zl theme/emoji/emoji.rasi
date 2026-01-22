@@ -1,0 +1,114 @@
+// N4ZL Theme by ziadlawatey
+// github: ziadlawatey
+// discord: ziadlawatey
+
+// // Importing matugen colors
+@import ".config/rofi/colors.rasi"
+
+// Global settings
+* {
+    font:   "Slat For OnePlus Medium 12";
+    background-color:   transparent;
+    text-color: #f2f2f2;
+}
+
+// // Some configurations 
+
+configuration {
+  modi:   "emoji";
+}
+
+// Window
+window {
+    width:                       520px;
+    background-color:   @background;
+    border-radius:  28px;
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+}
+
+// Main container
+mainbox {
+    padding:    15px;
+}
+
+// Input bar
+inputbar {
+    children:   [ icon-search, entry ];
+    background-color:   @on-secondary-fixed;
+    spacing:    10px;
+    padding:    0 15px 0 0;
+    border-radius:  20px;
+}
+
+// Search icon
+icon-search {
+    expand:     false;
+    filename:   "search-symbolic";
+    size:   24px;
+    background-color:   @on-primary;
+    padding:    8px 10px;
+    border-radius:      17px;
+}
+
+// Element cursor
+elemnent, element-icon, element-text {
+    cursor:     pointer;
+}
+
+// Entry field
+entry {
+    cursor:         text;
+    placeholder:    "Search";
+    placeholder-color:  #c4c4c4;
+    vertical-align:     0.55;
+}
+
+// Textbox
+textbox {
+    background-color:       @on-secondary-fixed;
+    text-color:     @error;
+    border-radius:  20px;
+    padding:    20px;
+}
+
+// List view
+listview {
+    children:   [element, scrollbar];
+    fixed-height:   false;
+    scrollbar:  true;
+    lines:  6;
+    background-color:   @on-secondary-fixed;
+    margin: 15px 0 0 0;
+    padding:    10px;
+    border-radius:  20px;
+}
+
+// Scrollbar
+scrollbar {
+    handle-width:   4px;
+    handle-rounded-corners: true;
+    background-color:   @on-secondary;
+    handle-color:   @on-surface-variant;
+    margin: 5px 7px 5px 15px;
+    border-radius:  5px;
+}
+
+// Element base
+element {
+    spacing:    10px;
+    padding: 8px 10px;
+    border-radius:  17px;
+}
+
+// Element selected normal
+element selected normal {
+    background-color:   @on-secondary;
+}
+
+// Element text
+element-text {
+    font:   "Slat For OnePlus Medium 15";
+    vertical-align: 0.5;
+}

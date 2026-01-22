@@ -1,0 +1,27 @@
+#define MUSIC0 "music\\mus02.ogg"
+#define MUSIC1 "music\\mus01.ogg"
+
+#include "maps\export.lgc"
+#include "maps\common.lgc"
+#include "maps\common_compaign.lgc"
+
+
+main()
+{
+  iff(1)
+  {
+    InitGame();
+    DoorsIsOpen = 1;
+  }
+  if( GameTact() )
+    return;
+  CompaignGameTact();
+  if( Flagman(0) )
+  {
+    static int win = 0;
+    iff ( GetVidData(179,VID_COUNT)==0 )//если не осталось мест для закладки динамита
+        win = GetTime();
+    iff( win && (GetTime() - win) > 5000 )
+        Win();
+  }  
+}

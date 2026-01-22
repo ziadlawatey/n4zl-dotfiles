@@ -1,0 +1,61 @@
+#define MUSIC0 ""
+#define MUSIC1 ""
+
+#include "maps\export.lgc"
+#include "maps\common.lgc"
+#include "maps\common_compaign.lgc"
+
+
+
+main()
+{
+  static int StartEffectTime;
+  iff(1)
+  {
+    StartEffectTime = GetTime();
+    SetCursor(CURSOR_OFF);
+    PlayMusicFile("music\\menu_mus.ogg");
+  }
+    static int AddOnSlide = 0;
+    int text = 0, text_count, old_time = 0;
+    if ( StartEffectTime && GetEffectState(EFF_FADE) > 45 )
+    {
+        StartEffectTime = 0;
+        if ( AddOnSlide > 2 )
+        {
+            SaveFame();
+            Load( "maps\\end.map" );
+            return;
+        }
+        else
+        {
+            MenuRelease();
+            text_count = 0;
+            old_time = GetTime();
+            MenuCreate(959, AddOnSlide, ScreenX()/2, ScreenY()/2, 0 );
+//            text = CreateTextFromFile(3, ScreenX()/2 - 300, ScreenY()/2 + 150, 1, "Text\\addon_story_0" + itoa(++AddOnSlide) + ".txt");
+            text = CreateTextFromFile(3, 10, 10, 1, "Text\\addon2end_0" + itoa(++AddOnSlide) + ".txt");
+//            if ( AddOnSlide < 3 )
+//                text_count = 10000;
+            Action(text, ACT_SET_TEXT_COUNT, text_count);
+        }
+    }
+    if ( !StartEffectTime )
+        if ( GetKey() || (GetInputState() & (INPUT_LCLICK | INPUT_RCLICK)) || (GetTime() - old_time) > 20000 || (text_count && (GetTime() - old_time) > 5000))
+            if ( text_count )
+            {
+                Effect(EFF_FADE,0,0,FADE_GAME_TIME);
+                StartEffectTime = GetTime();
+            }
+            else
+            {
+                text_count = 10000;
+                Action(text, ACT_SET_TEXT_COUNT, text_count);
+    //            Action(text, ACT_SET_FILE, "Text\\addon_story_0" + itoa(AddOnSlide) + ".txt");
+            }
+    if ( GetKey() == 27 || (GetInputState() & INPUT_RCLICK) )
+    {
+        AddOnSlide = 5;
+        old_time = GetTime() - 20000;
+    }
+}

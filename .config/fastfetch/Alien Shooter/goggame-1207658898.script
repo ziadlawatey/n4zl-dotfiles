@@ -1,0 +1,19 @@
+{
+    "actions": [
+        {
+            "install": {
+                "action": "setRegistry", 
+                "arguments": {
+                    "root": "HKEY_CURRENT_USER", 
+                    "saveGameData": true, 
+                    "subkey": "Software\\SigmaTeam\\AlienShooter"
+                }
+            }, 
+            "languages": [
+                "*"
+            ], 
+            "name": "registryKey1"
+        }
+    ], 
+    "productId": "1207658898"
+}

@@ -1,0 +1,203 @@
+// N4ZL Theme by ziadlawatey
+// github: ziadlawatey
+// discord: ziadlawatey
+
+@import ".config/rofi/colors.rasi"
+
+
+// Global settings
+* {
+    font:   "Slat For OnePlus Medium 12";
+    background-color:   transparent;
+    text-color: #f2f2f2;
+    spacing:    0px;
+    margin:     0px;
+    padding:    0px;
+}
+
+// Configuration
+// configuration {
+
+// }
+
+// Window
+window {
+    enabled:                     true;
+    // min-height:         500px;
+
+    width:                       580px;
+    background-color:   @background;
+    border-radius:  28px;
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+}
+
+// Main container
+mainbox {
+    spacing: 15px;
+    padding:    15px;
+        orientation:                 vertical;
+    children:                    [ "inputbar", "listbox"];
+}
+
+imagebox {
+    width: 70px;
+          // Add this line to control the width
+    expand: false;  // Add this line
+    border-radius:  20px;
+    spacing: 15px;
+    padding:                     10px;
+    background-color:            transparent;
+    background-image:            url("~/.config/rofi/wallpaper.png", height);
+    children:                    [ "textbox-prompt-colon", "dummy", "mode-switcher" ];
+    vertical-align:     0.5;
+}
+
+mode-switcher {
+    // padding:        0 3px;
+    margin: 0 6px;
+    enabled:                     true;
+    spacing: 3px;
+    orientation:                 vertical;
+    border-radius:               25px;
+}
+
+button {
+    horizontal-align:            0.38;
+    padding:        9px 0;
+    cursor:                      pointer;
+    background-color:   @on-primary;
+}
+
+button selected {
+    background-color:            @primary;
+    text-color:                  @surface;
+}
+
+
+listbox {
+    spacing: 15px;
+    orientation:                 horizontal;
+    children:                    ["listview", "imagebox"];
+}
+
+inputbar {
+    children:   [ icon-search, entry, icon-paste ];
+    background-color:   @on-secondary-fixed;
+    spacing:    10px;
+    padding:    0 15px 0 0;
+    border-radius:  20px;
+}
+
+
+textbox-prompt-colon {
+
+    color:          @primary;
+    font:   "Slat For OnePlus Black 26";
+	expand: 						false;
+    horizontal-align:            0.6;
+}
+
+// Search icon
+icon-search {
+    expand:     false;
+    filename:   "search-symbolic";
+    size:   24px;
+    background-color:   @on-primary;
+    padding:    8px 10px;
+    border-radius:      17px;
+}
+
+// Element cursor
+elemnent, element-icon, element-text {
+    cursor:     pointer;
+}
+
+
+icon-paste {
+    cursor:     pointer;
+    expand: false;
+    filename: "gtk-paste";
+    size: 24;
+    vertical-align: 0.5;
+    action: "kb-primary-paste";
+}
+
+// Entry field
+entry {
+    cursor:         text;
+    placeholder:    "Search";
+    placeholder-color:  #c4c4c4;
+    vertical-align:     0.55;
+}
+
+// Message
+message {
+    margin:     12px 0 0 0;
+}
+
+// Textbox
+textbox {
+    background-color:       @on-secondary-fixed;
+    text-color:     @error;
+    border:     30px;
+    border-radius:  20px;
+}
+
+// List view
+listview {
+    children:   [element, scrollbar];
+    // fixed-height:   false;
+    scrollbar:  true;
+    lines:  6;
+    columns:    1;
+    background-color:   @on-secondary-fixed;
+    spacing:    3px;
+    padding:    10px;
+    border-radius:  20px;
+}
+
+// Scrollbar
+scrollbar {
+    handle-width:   4px;
+    handle-rounded-corners: true;
+    background-color:   @on-secondary;
+    handle-color:   @on-surface-variant;
+    margin: 5px 7px 5px 15px;
+    border-radius:  5px;
+}
+
+// Element base
+element {
+    spacing:    10px;
+    padding:    5px 8px;
+    border-radius:  17px;
+}
+
+// Element normal active
+element normal active {
+    background-color:   @secondary-container;
+}
+
+// Element selected normal
+element selected normal {
+    background-color:   @on-secondary;
+}
+
+// Element selected active
+element selected active {
+    background-color:   @outline;
+}
+
+// Element icon
+element-icon {
+    size:   1.75em;
+}
+
+// Element text
+element-text {
+        horizontal-align:            0.0;
+
+    vertical-align: 0.5;
+}

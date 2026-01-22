@@ -1,0 +1,33 @@
+#define MUSIC0 ""
+#define MUSIC1 ""
+
+#include "maps\export.lgc"
+#include "maps\common.lgc"
+#include "maps\common_compaign.lgc"
+
+
+
+main()
+{
+  static int start_time;
+  static int text=0;
+  iff(1)
+  {
+    start_time = GetTime();
+//    SetCursor(CURSOR_OFF);
+    StopMusic();
+    PlayMovie("vid\\outro.avi");
+  }
+  iff ( GetKey()  || (GetInputState()&(INPUT_LCLICK|INPUT_RCLICK)))
+  {
+    StopMovie();
+  }
+  iff ( !IsPlayMovie() )
+    LoadNextMap( "maps\\end.map" );
+  if( StartNextMap )
+    if( GetEffectState(EFF_FADE) > 45 )
+    {
+        SaveFame();
+        Load(NextMapName);
+    }
+}

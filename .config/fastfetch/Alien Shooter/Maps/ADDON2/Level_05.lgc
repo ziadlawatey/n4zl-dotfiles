@@ -1,0 +1,169 @@
+#define AMBIENT_OGG "music\\mus00.ogg"
+#define WIND_OGG "music\\wind.ogg"
+#define MUSIC0  "music\\mus03.ogg"
+#define MUSIC1  "music\\mus02.ogg"
+#define MUSIC2  "music\\mus01.ogg"
+
+#define MAX_885_MONSTER_NUM     18
+#define SEMI_BOSS_VID           885
+#define ANTI_MONSTER_BOX_VID    790
+
+#include "maps\export.lgc"
+#include "maps\common.lgc"
+#include "maps\common_compaign.lgc"
+
+//-------------------------------------------------------------------------------
+static int BossHealthBar = 0;
+static int Boss = 0;
+
+
+//-------------------------------------------------------------------------------
+WinWithPause()
+{
+    Win();
+    while( MenuFind(3,999999) )
+        Destroy( MenuFind(3,999999) );
+
+    Genocide( 908 );
+    int i;
+    for( i=FirstSprite(); i; i=NextSprite() )
+    {
+        if( GetUnitVid(i)==SEMI_BOSS_VID )
+            Action( i, ACT_CHANGE_ANIMATION, ANI_DEATH );
+    }
+
+
+    WinTime  =  GetTime() + 5000;
+}
+
+//-------------------------------------------------------------------------------
+F890_15(int unit)
+{
+    WinWithPause();
+}
+
+
+//-------------------------------------------------------------------------------
+F890_16(int unit)
+{
+    WinWithPause();
+}
+
+
+//-------------------------------------------------------------------------------
+main()
+{
+    iff(1)
+    {
+        InitGame();
+        PlayMusicFile( WIND_OGG, 1 );
+        DoorsIsOpen = 1;
+    }
+    if( GameTact() )
+        return;
+
+//  CompaignGameTact();
+
+    //point of hero's rebirth
+    iff( SizeTo( Flagman(0), 2761, 2929 ) < 400 )
+    {
+        StartPlayerX = 3864;
+        StartPlayerY = 2154;
+        StartPlayerZ = 0;
+    }
+
+    iff( SizeTo( Flagman(0), 2100, 1390 ) < 230 )
+    {
+        int i;
+        StartPlayerX = GetX( Flagman(0) );
+        StartPlayerY = GetY( Flagman(0) );
+        StartPlayerZ = GetZ( Flagman(0) );
+        //
+        DoorsIsOpen = 0;
+        PlaySFX( 57 );
+        EarthQuake(3000);
+        FlashAutoChange = 0;
+        LightOff( 0x1d313d );
+        for( i=FirstSprite(); i; i=NextSprite() )
+        {
+            if( GetUnitVid(i)==423 )
+            {
+                //замены кнопок у дверей
+                CreateSprite(424,GetX(i),GetY(i),GetZ(i),GetDirection(i));
+                Destroy(i);
+            }
+            if( GetUnitVid(i)==890 )
+                Boss = i; 
+	        if( GetUnitVid(i)==SEMI_BOSS_VID )
+    	        Action( i, ACT_CHANGE_ANIMATION, ANI_DEATH );
+        }
+
+        PlayMusicFile(MUSIC0);
+    }
+
+    //BossHealthBar is released sometimes (after pressing tab)
+    if( Boss && !BossHealthBar && StateBar )
+        BossHealthBar = CreateSprite(931, ScreenX() / 2 , 50, 0, 0 );
+
+    if( BossHealthBar )
+    {
+        if( Boss )
+        {
+            int val, maxhp, hp;
+            hp = Action( Boss, ACT_GET_HP );
+            if( hp < 0 )
+                hp = 0;
+            maxhp = GetVidData( GetUnitVid( Boss ), VID_MAXHP );
+            val = 0;
+            if( hp && maxhp )
+                val = 250 - 255 * hp / maxhp;       //250 - HACK
+            if( val < 0 )
+                val = 0;
+            Action( BossHealthBar, ACT_CHANGE_DIRECTION, val );
+            if( !hp )
+            {
+                Destroy( BossHealthBar );
+                BossHealthBar = 0;
+            }
+        }
+        else
+        {
+            Destroy( BossHealthBar );
+            BossHealthBar = 0;
+        }
+    }
+
+    iff( SizeTo( Flagman(0), 1505, 2560 ) < 150 )
+    {
+        //StopMusic();
+        MusicFileNumber = 1;
+        PlayMusicFile( AMBIENT_OGG, 1 );
+    }
+
+
+    //control of the monsters count
+    static int Boxes[ 4 ];
+    if( GetVidData( SEMI_BOSS_VID, VID_COUNT ) > MAX_885_MONSTER_NUM )
+    {
+        if( !Boxes[ 0 ] )
+            Boxes[ 0 ] = CreateSprite( ANTI_MONSTER_BOX_VID, 1268, 1051, 0 );
+        if( !Boxes[ 1 ] )
+            Boxes[ 1 ] = CreateSprite( ANTI_MONSTER_BOX_VID, 1142,  398, 0 );
+        if( !Boxes[ 2 ] )
+            Boxes[ 2 ] = CreateSprite( ANTI_MONSTER_BOX_VID, 2335,  477, 0 );
+        if( !Boxes[ 3 ] )
+            Boxes[ 3 ] = CreateSprite( ANTI_MONSTER_BOX_VID, 2601, 1353, 0 );
+    }
+    else
+    {
+        int i;
+        for( i = 0; i < 4; i++ )
+        {
+            if( Boxes[ i ] )
+            {
+                Destroy( Boxes[ i ] );
+                Boxes[ i ] = 0;
+            }
+        }
+    }
+}

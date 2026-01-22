@@ -1,0 +1,18 @@
+// // Default configurations (for any theme)
+configuration {
+    drun-match-fields: "name,generic,exec,categories,keywords";
+	  drun-url-launcher: "xdg-open";
+	  run-command: "{cmd}";
+	  run-list-command: "";
+	  run-shell-command: "{terminal} -e {cmd}";
+    modi:   "drun,run,window";
+    window-match-fields: "title,class,role,name,desktop";
+	  window-command: "wmctrl -i -R {window}";
+	  window-format: "{w} {c} - {t:0}";
+    display-drun:               "";
+    display-run:                "";
+    display-window:             "";
+}
+
+//  Setting the default launcher theme
+@theme ".config/rofi/launcher/n4zl theme/apps/launcher.rasi"

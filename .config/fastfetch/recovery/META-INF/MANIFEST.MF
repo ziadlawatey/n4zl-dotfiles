@@ -1,0 +1,45 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: bhpLS9cWic4uqKP27IOtrcEom8U=
+
+Name: sdcard/Fox/FoxFiles/OF_initd.zip
+SHA1-Digest: g+t73i7tfTp5bzYTL31eGd7JNVU=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: Oj05dC8687BTbFt91wLW1r7SsF4=
+
+Name: sdcard/Fox/FoxFiles/SubstratumRescue.zip
+SHA1-Digest: l+WcI4cufI08KQpOnUip3OvdS3Q=
+
+Name: META-INF/debug/default.prop
+SHA1-Digest: LABhGah+ExP9eZ7xRb0x9W5S3zQ=
+
+Name: INSTALL.txt
+SHA1-Digest: VcAZ2GZeE8UciOyUN+jEhp13RG8=
+
+Name: sdcard/Fox/fox.bashrc
+SHA1-Digest: s7wz9IXMf/BB9zoALxFUlexyf04=
+
+Name: sdcard/Fox/FoxFiles/unrootmagisk.zip
+SHA1-Digest: oq0N0hMndL/5J3JIbTDeNKgcHaM=
+
+Name: sdcard/Fox/FoxFiles/SubstratumRescue_Legacy.zip
+SHA1-Digest: 0GtY+dd4w3ju57zj3QXu1jVVWKs=
+
+Name: META-INF/debug/fox_build_vars.txt
+SHA1-Digest: QrvRPKSdpdZTTxfZ5jlIQxTFFCk=
+
+Name: sdcard/Fox/FoxFiles/GoogleSans.zip
+SHA1-Digest: ExulzVbcfGPiGb8YA979dae8oa8=
+
+Name: sdcard/Fox/FoxFiles/PassReset.zip
+SHA1-Digest: VLipsh0XvCtpN5q+RPN9lLeLdek=
+
+Name: recovery.img
+SHA1-Digest: lBMggKorS1tfrGiSW8bBroSFZNs=
+
+Name: sdcard/Fox/FoxFiles/Magisk.zip
+SHA1-Digest: kFT/zIP+1gysu8yfzC2vaEChKR8=
+

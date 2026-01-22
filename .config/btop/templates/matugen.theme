@@ -1,0 +1,86 @@
+# Matugen template for btop
+# Colors should be in 6 or 2 character hexadecimal or single spaced rgb decimal: "#RRGGBB", "#BW" or "0-255 0-255 0-255"
+# example for white: "#ffffff", "#ff" or "255 255 255".
+# All graphs and meters can be gradients
+# For single color graphs leave "mid" and "end" variable empty.
+# Use "start" and "end" variables for two color gradient
+# Use "start", "mid" and "end" for three color gradient
+
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]=""
+
+# Main text color
+theme[main_fg]="#dee4e0"
+
+# Title color for boxes
+theme[title]="#86d6be"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#86d6be"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#303634"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#dee4e0"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#bfc9c4"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#86d6be"
+
+# Cpu box outline color
+theme[cpu_box]="#89938e"
+
+# Memory/disks box outline color
+theme[mem_box]="#89938e"
+
+# Net up/down box outline color
+theme[net_box]="#89938e"
+
+# Processes box outline color
+theme[proc_box]="#89938e"
+
+# Box divider line and small boxes line color
+theme[div_line]="#3f4945"
+
+# Temperature graph colors (primary -> error for heat intensity)
+theme[temp_start]="#86d6be"
+theme[temp_mid]="#a9cbe3"
+theme[temp_end]="#ffb4ab"
+
+# CPU graph colors (primary accent theme)
+theme[cpu_start]="#86d6be"
+theme[cpu_mid]="#005141"
+theme[cpu_end]="#a9cbe3"
+
+# Mem/Disk free meter (green/success colors for free space)
+theme[free_start]="#416277"
+theme[free_mid]="#a9cbe3"
+theme[free_end]="#294a5e"
+
+# Mem/Disk cached meter (secondary accent for cached)
+theme[cached_start]="#4b635b"
+theme[cached_mid]="#b2ccc2"
+theme[cached_end]="#344c44"
+
+# Mem/Disk available meter (primary colors for available)
+theme[available_start]="#0e6b58"
+theme[available_mid]="#86d6be"
+theme[available_end]="#005141"
+
+# Mem/Disk used meter (same as CPU load colors)
+theme[used_start]="#86d6be"
+theme[used_mid]="#005141"
+theme[used_end]="#a9cbe3"
+
+# Download graph colors (primary theme gradient)
+theme[download_start]="#86d6be"
+theme[download_mid]="#b2ccc2"
+theme[download_end]="#a9cbe3"
+
+# Upload graph colors (reverse gradient)
+theme[upload_start]="#a9cbe3"
+theme[upload_mid]="#b2ccc2"
+theme[upload_end]="#86d6be"

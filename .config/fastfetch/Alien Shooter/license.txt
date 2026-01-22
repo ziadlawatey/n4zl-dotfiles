@@ -1,0 +1,50 @@
+YOU SHOULD READ CAREFULLY THE FOLLOWING END USER LICENSE AGREEMENT BEFORE INSTALLING THIS SOFTWARE PROGRAM.
+
+This software program, any printed materials, any on-line or electronic documentation, and any and all copies and derivative works of such software program and materials (the "Program") are the copyrighted work of Sigma Team company, and/or its subsidiaries, licensors and/or its suppliers. All use of the Program is governed by the terms of the End User License Agreement which is provided below ("License"). The Program is solely for use by end users according to the terms of the License. Any use, reproduction or redistribution of the Program not in accordance with the terms of the License is expressly prohibited.
+
+END USER LICENSE AGREEMENT
+
+1. Limited Use License.  Sigma Team company ( "Licensor") hereby grants, and by installing the Program you thereby accept, a limited, non-exclusive license and right to install and use one (1) copy of the Program for your use on either a home, business or portable computer. The Program is licensed not sold. Your license confers no title or ownership in the Program.
+
+2. Ownership.  All title, ownership rights and intellectual property rights in and to the Program and any and all copies thereof (including but not limited to any titles, computer code, themes, objects, characters, character names, stories, dialog, catch phrases, locations, concepts, artwork, animations, sounds, musical compositions, audio-visual effects, methods of operation, moral rights, any related documentation, and "applets" incorporated into the Program) are owned by Licensor or its licensors. The Program is protected by the English copyright laws, international copyright treaties and conventions and any other applicable laws. All rights are reserved. The Program may contain certain licensed materials and Licensor's licensors may act to protect their rights in the event of any violation of this Agreement.
+
+3. Responsibilities of End User.
+
+A. Subject to the Grant of License herein above, you may not, in whole or in part, copy, photocopy, reproduce, translate, reverse engineer, derive source code, modify, disassemble, decompile, create derivative works based on the Program, or remove any proprietary notices or labels on the Program without the prior consent, in writing, of Licensor.
+
+B. The Program is licensed to you as a single product. Its component parts may not be separated for use on  more than one computer. 
+
+C. You are entitled to use the Program for your own use, but you are not be entitled to: 
+
+(i)    sell or grant a security interest in or transfer reproductions of the Program to other parties in any way, nor to rent, lease or license the Program to others without Licensor's prior written consent;
+ 
+(ii)    publish and/or distribute the computer images, sound, files, fonts, graphics, clipart, animations, photographs, databases or other content of the Program (including without limitation, for resale, printed materials for your personal or business use (e.g., flyers and brochures) and on your personal and business website); 
+
+(iii)    use any of the computer images related to identifiable individuals or entities in a manner which suggests their association with or endorsement of any product or services ;
+
+(iv)    exploit the Program or any of its parts, computer images, sound files, fonts, graphics, clipart, animations, photographs, databases or other content in the Program, for any commercial purpose including, but not limited to, use at a cyber cafe, computer gaming centre or any other location-based site. Licensor may offer a separate Site License Agreement to permit you to make the Program available for commercial use;
+
+
+4. Program Transfer.  You may permanently transfer all of your rights under this License, provided the recipient agrees to the terms of this License and you agree to remove the Program from your home, business or portable computer.
+
+5. Termination.  This License is effective until terminated. You may terminate the License at any time by destroying the Program. Licensor may, at its discretion, terminate this License in the event that you fail to comply with the terms and conditions contained herein. In such event, you must immediately destroy the Program.
+
+6. Limited Warranty.  LICENSOR EXPRESSLY DISCLAIMS ANY WARRANTY FOR THE PROGRAM AND MANUAL(S). THE PROGRAM AND MANUAL(S) ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. LICENSOR FURTHER DISCLAIMS ALL WARRANTIES WITH REGARD TO YEAR 2007 COMPLIANCE OF THE SOFTWARE. The entire risk arising out of use or performance of the Program and Manual(s) remains with you, however Licensor warrants that the media containing the Program shall be free from defects in material and workmanship under normal use and services and the Program will perform substantially in accordance with the accompanying written materials, for a period of ninety (90) days from the date of your purchase of the Program. In the event that the media proves to be defective during that time period, and upon presentation to Licensor of proof of purchase of the defective Program, Licensor will at its option 1) correct any defect, 2) provide you with a product of equal value, or 3) refund your money. Some states/jurisdiction do not allow limitation on duration of an implied warranty, so the above limitation may not apply to you.
+
+In case you would like to exchange the product or refund you money, notably if the product is defective, please refer to the "Technical Support Policy" herein included.
+
+7. Equitable Remedies.  You hereby agree that Licensor would be irreparably damaged if the terms of this License were not specifically enforced, and therefore you agree that Licensor shall be entitled, without bond, other security, or proof of damages, to appropriate equitable remedies with respect to breaches of this License, in addition to such other remedies as Licensor may otherwise have available to it under applicable laws.
+
+8.  Miscellaneous.  The License shall be deemed to have been made and executed in USA, and any dispute arising hereunder shall be resolved in accordance with the English law. This License may be amended, altered or modified only by an instrument in writing, specifying such amendment, alteration or modification, executed by both parties. In the event that any provision of this License shall be held by a court or other tribunal of competent jurisdiction to be unenforceable, such provision will be enforced to the maximum extent permissible and the remaining portions of this License shall remain in full force and effect.  The terms and conditions of a paper printed licence eventually accompanying the Program prevail on any terms and condition of a license eventually included in the Program and that could appear on screen.
+
+You hereby acknowledge that you have read and understand the foregoing License and agree that the action of installing the Program is an acknowledgement of your agreement to be bound by the terms and conditions of the License contained herein. You also acknowledge and agree that this License is the complete and exclusive statement of the agreement between Licensor and you and that the License supersedes any prior or contemporaneous agreement, either oral or written, and any other communications between Licensor and you including any inconsistent written license agreement or on-line help accompanying the Program.
+
+
+TECHNICAL SUPPORT POLICY
+
+
+Attention: The technical support will only be available for private use complying with the terms of the End User License Agreement attached to the Product and to which you have agreed. Consequently, the technical support will not, in any case, be available for commercial or professional use of the Product.
+
+
+
+                                                     

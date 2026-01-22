@@ -1,0 +1,66 @@
+----< 2025-10-18 22:59:42 >----< Z:\mnt\overall_storage\fastfetch\Alien Shooter\AlienShooter.exe (Cr-2018-01-31 12:55:40 La-2018-01-31 12:55:40 Lw-2018-01-31 12:55:40) >----
+   Enum display modes 1024x768 R5G6B5 D16
+   Enum display modes 800x600 R5G6B5 D16
+   Enum display modes 640x480 R5G6B5 D16
+   Enum display modes 1024x768 X8R8G8B8 D16
+   Enum display modes 800x600 X8R8G8B8 D16
+   Enum display modes 640x480 X8R8G8B8 D16
+WM_PAINT
+Selected display mode 1024x768 X8R8G8B8 desktop X8R8G8B8 zbuffer Unknown
+SetViewPort (0,0) - (1024,768)
+Op=mod Arg1=tex Arg2=cur AOp=sel1 Arg1=tex Arg2=cur
+Op=mod Arg1=tex Arg2=dif AOp=mod Arg1=tex Arg2=dif
+TextureCaps=NOTPOWER2 DXT1 DXT3 DXT5 MAXSIZE=16384,16384
+caps=ALPHAPALETTE HARDWARE DOUBLEBUFFER DOTPRODUCT3 CAN'T_Z_BLT COLOR32 VSYNC PIXELSHADER=-65276
+Pitch=4096 zPitch=2048
+!!!ERROR 22:59:50!!!RES 'Not opened' 'data': 0x0 Couldn't open 'wav\addon\fly_death2.wav'
+LoadSFX::No   =58                sizeof(SFX)   =72       load time     =27ms Quality=1
+LoadWeapon::No=46                sizeof(WEAPON)=612 
+!!!ERROR 22:59:50!!!VID [0-Загрузка]: 0 Missing noCadr for noAnimCadr and noDir
+!!!ERROR 22:59:50!!!PICTURE 'vid\small_logo.bmp': 0x0 Couldn't open ''
+LOAD::Can't open file vid\small_logo.bmp
+!!!ERROR 22:59:51!!!RES '' 'DATA': 0x0 Couldn't open 'vid\small_logo.bmp'
+LOAD::Can't open file vid\small_logo.bmp
+!!!ERROR 22:59:53!!!PICTURE 'vid\small_logo2.bmp': 0x0 Couldn't open ''
+LOAD::Can't open file vid\small_logo2.bmp
+!!!ERROR 22:59:55!!!RES '' 'DATA': 0x0 Couldn't open 'vid\small_logo2.bmp'
+LOAD::Can't open file vid\small_logo2.bmp
+!!!ERROR 22:59:56!!!PICTURE 'vid\publ_logo2.bmp': 0x0 Couldn't open ''
+LOAD::Can't open file vid\publ_logo2.bmp
+!!!ERROR 22:59:59!!!RES '' 'DATA': 0x0 Couldn't open 'vid\publ_logo2.bmp'
+LOAD::Can't open file vid\publ_logo2.bmp
+!!!ERROR 23:00:02!!!PICTURE 'vid\publ_logo.bmp': 0x0 Couldn't open ''
+LOAD::Can't open file vid\publ_logo.bmp
+!!!ERROR 23:00:04!!!RES '' 'DATA': 0x0 Couldn't open 'vid\publ_logo.bmp'
+LOAD::Can't open file vid\publ_logo.bmp
+!!!ERROR 23:00:06!!!VID [926-Взрыв кислотный]: 0x0 Load DATA
+!!!ERROR 23:00:06!!!VID [926-Взрыв кислотный]: 49 nWeapon > noWeapon
+!!!ERROR 23:00:06!!!VID [10-ИГРОК - верхняя часть туловища (Secret Weapon)]: 0xFA Invalid LinkVid
+!!!ERROR 23:00:06!!!VID [550-ИГРОК girl - верхняя часть туловища (Secret Weapon)]: 0xFA Invalid LinkVid
+!!!ERROR 23:00:06!!!VID [881-смерть 1 Spawn ЛЕТУН]: 0xFFFFFAE1 Invalid child
+!!!ERROR 23:00:06!!!VID [881-смерть 1 Spawn ЛЕТУН]: 0x520 Invalid child
+!!!ERROR 23:00:06!!!VID [886-смерть Подводник]: 0x520 Invalid child
+!!!ERROR 23:00:06!!!VID [891-смерть Подводник (Weapon)]: 0x520 Invalid child
+LoadVid::No   =1001              sizeof(VID)   =1156     load time     =16390ms   MaxSizeX,Y=1024,768
+Player release
+Sprite release
+Menu   release
+Average fps=0
+Script release
+!!!ERROR 23:00:06!!!RES 'maps\logo.map' 'MAP ': 0x0 Invalid resource type
+!!!ERROR 23:00:06!!!MAP: 0x0 Section can't found (load 'VID')
+CurrentTime   =10                sizeof(SPRITE)=112      Map version   =9
+Vid    release 8134656 97710889
+LoadScript::ByteCode=1384 varNo=152 DefineNo=417 stackNo=234
+Player release
+Sprite release
+Menu   release
+Average fps=0
+Script release
+Mouse  release
+!!!ERROR 23:00:06!!!SPRITE -1: 0x1 Invalid noRef for SPRITE with EmptyVid
+!!!ERROR 23:00:06!!!SPRITE -1: 1 Reference count non zero after delete
+Vid    release 393216 0
+d3dDevice release 1
+d3d release 0
+ase 0

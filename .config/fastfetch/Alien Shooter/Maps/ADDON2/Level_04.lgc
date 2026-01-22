@@ -1,0 +1,37 @@
+#define MUSIC0 "music\\mus01.ogg"
+#define MUSIC1 "music\\mus03.ogg"
+#define MUSIC2 "music\\mus02.ogg"
+
+#include "maps\export.lgc"
+#include "maps\common.lgc"
+#include "maps\common_compaign.lgc"
+
+
+main()
+{
+  iff(1)
+  {
+    InitGame();
+    DoorsIsOpen = 0;
+  }
+  if( GameTact() )
+    return;
+  CompaignGameTact();
+
+  iff( SizeTo(Flagman(0),3050,776) < 100 )
+  {//триггер для выключения света и закрытия дверей
+    //смена точки перерождения для игрока
+    DoorsIsOpen = 0;
+    PlaySFX(44);
+    EarthQuake(3000);
+    //SetGamma(0x545454);
+    LightOff(0x606060);
+  }
+  iff( SizeTo(Flagman(0),2516,2420) < 400 )
+  {
+    StartPlayerX = 1684;//3550
+    StartPlayerY = 1640;//2266
+    StartPlayerZ = 0;
+  }
+    
+}

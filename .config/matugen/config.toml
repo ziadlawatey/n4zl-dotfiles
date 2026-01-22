@@ -1,0 +1,60 @@
+[config]
+command = "swww"
+arguments = ["img", "--transition-type", "wipe", "--transition-angle", "120", "--transition-duration", "2"]
+set = true
+
+[templates.hyprland]
+input_path = './templates/hyprland/hyprland.conf'
+output_path = '~/.config/hypr/hyprland/colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.kitty]
+input_path = './templates/terminal/kitty.conf'
+output_path = '~/.config/kitty/colors.conf'
+post_hook = 'killall -SIGUSR1 kitty'
+
+[templates.btop]
+input_path = './templates/terminal/btop.conf'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'killall -USR2 btop'
+
+[templates.cava]
+input_path = './templates/terminal/cava.ini'
+output_path = '~/.config/cava/themes/matugen.ini'
+post_hook = "pkill -USR1 cava"
+
+[templates.gtk3]
+input_path = './templates/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = './templates/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.hyprlock]
+input_path = './templates/hyprland/hyprlock.conf'
+output_path = '~/.config/hypr/hyprlock/colors.conf'
+
+[templates.spicetify-colors]
+input_path = './templates/spicetify/colors.ini'
+output_path = '~/.config/spicetify/Themes/Dribbblish/color.ini'
+
+[templates.spicetify-css]
+input_path = './templates/spicetify/user.css'
+output_path = '~/.config/spicetify/Themes/Dribbblish/user.css'
+
+[templates.waybar]
+input_path = './templates/waybar.css'
+output_path = '~/.config/waybar/colors.css'
+
+[templates.rofi]
+input_path = './templates/rofi.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.vencord]
+input_path = './templates/apps/discord.css'
+output_path = '~/.config/Vencord/themes/matugen.css'
+
+[templates.neovim]
+input_path = './templates/terminal/neovim.lua'
+output_path = '~/.config/nvim/colors.lua'

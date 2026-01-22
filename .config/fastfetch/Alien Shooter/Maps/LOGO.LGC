@@ -1,0 +1,119 @@
+#include "maps\export.lgc"
+//#include "maps\common.lgc"
+
+#define FADE_TIME 1000 //0 - по умолчанию
+
+int StartPublisherLogoTime = 0,
+    StartPublisherLogo2Time = 0,
+    StartLogoTime = 0,
+    StartLogoTeamTime = 0,//время начала проигрывания logo
+    StartNextFile = 0;
+
+main()
+{
+  iff( 1 )
+  {
+    SetReg( GetDefaultRegPath(),"NewRecord",999 );
+    SetCursor(CURSOR_OFF);
+    SetSoundVolume( GetReg(GetDefaultRegPath(),"SoundVolume","100") );
+    SetMusicVolume( GetReg(GetDefaultRegPath(),"MusicVolume","100") );
+    StartPublisherLogoTime = GetTime();
+    Effect(EFF_FADE,0,0,FADE_TIME);
+  }
+  if( StartPublisherLogoTime )
+  {
+    if( GetEffectState(EFF_FADE) > 45 || GetEffectState(EFF_FADE) < 0 )
+    {
+      iff( 1 )
+      {
+        if( !CreateSprite(702,ScreenX()/2,ScreenY()/2,0) )
+        {
+          StartPublisherLogo2Time = GetTime();
+          StartPublisherLogoTime = 0;
+        }
+      }
+      if( GetKey() || (GetInputState()&(INPUT_LCLICK|INPUT_RCLICK)) || (GetTime() - StartPublisherLogoTime) > 5000 )
+      {
+        StartPublisherLogo2Time = GetTime();
+        StartPublisherLogoTime = 0;
+        Effect(EFF_FADE,0,0,FADE_TIME);
+      }
+    }
+    return;
+  }
+  if( StartPublisherLogo2Time )
+  {
+    if( GetEffectState(EFF_FADE) > 45 || GetEffectState(EFF_FADE) < 0 )
+    {
+      iff( 1 )
+      {
+        MenuRelease();
+        if( !CreateSprite(699,ScreenX()/2,ScreenY()/2,0) )
+        {
+          StartLogoTime = GetTime();
+          StartPublisherLogo2Time = 0;
+        }
+      }
+      if( GetKey() || (GetInputState()&(INPUT_LCLICK|INPUT_RCLICK)) || (GetTime() - StartPublisherLogo2Time) > 5000 )
+      {
+        StartLogoTime = GetTime();
+        StartPublisherLogo2Time = 0;
+        Effect(EFF_FADE,0,0,FADE_TIME);
+      }
+    }
+    return;
+  }
+  if( StartLogoTime )
+  {
+    if( GetEffectState(EFF_FADE) > 45 || GetEffectState(EFF_FADE) < 0 )
+    {
+      iff( 1 )
+      {
+        MenuRelease();
+        if( !CreateSprite(700,ScreenX()/2,ScreenY()/2,0) )
+        {
+          StartLogoTeamTime = GetTime();
+          StartLogoTime = 0;
+        }
+        PlayMusicFile("music\\menu_mus.ogg");
+      }
+      if( GetKey() || (GetInputState()&(INPUT_LCLICK|INPUT_RCLICK)) || (GetTime() - StartLogoTime) > 5000 )
+      {
+        StartLogoTeamTime = GetTime();
+        StartLogoTime = 0;
+        Effect(EFF_FADE,0,0,FADE_TIME);
+      }
+    }
+    return;
+  }
+  if( StartLogoTeamTime )
+  {
+    if( GetEffectState(EFF_FADE) > 45 || GetEffectState(EFF_FADE) < 0 )
+    {
+      iff( 1 )
+      {
+        MenuRelease();
+        if( !CreateSprite(701,ScreenX()/2,ScreenY()/2,0) )
+        {
+          StartLogoTeamTime = 0;
+          StartNextFile = GetTime();
+        }
+//        PlayMusicFile("music\\logo_mus.ogg");
+      }
+      iff( GetKey() || (GetInputState()&(INPUT_LCLICK|INPUT_RCLICK)) || (GetTime() - StartLogoTeamTime) > 8000 )
+      {
+        StartLogoTeamTime = 0;
+        StartNextFile = GetTime();
+        Effect(EFF_FADE,0,0,FADE_TIME);
+      }
+    }
+    return;
+  }
+  if( StartNextFile )
+  {
+    iff( GetEffectState(EFF_FADE) > 45 )
+    {
+      Load("maps\\mainmenu.map");
+    }
+  }
+}

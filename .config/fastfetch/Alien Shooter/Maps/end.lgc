@@ -1,0 +1,39 @@
+#include "maps\export.lgc"
+
+#define GAME_TYPE_COMPAIGN 0
+#define GAME_TYPE_SURVIVE  1
+#define GAME_TYPE_ADDON    2
+#define GAME_TYPE_ADDON2   3
+
+main()
+{
+  string nextmap;
+  iff(1)
+  {
+    PlayMusicFile("music\\menu_mus.ogg");
+    if( GetReg(GetDefaultRegPath(),"GameType", GAME_TYPE_COMPAIGN) == GAME_TYPE_ADDON2 )
+        MenuLoad("maps\\endaddon2.men");
+    else if( GetReg(GetDefaultRegPath(),"GameType", GAME_TYPE_COMPAIGN) == GAME_TYPE_ADDON )
+        MenuLoad("maps\\endaddon.men");
+    else
+        MenuLoad("maps\\end.men");
+    SetCursor(CURSOR_NORMAL);
+  }
+  if( GetEffectState(EFF_FADE) > 45 )
+  {
+    if( nextmap=="buy" )
+      Exec(GetString("strings","FinalLink"));
+    if( nextmap!="" )
+      Load("maps\\mainmenu.map");
+  }
+  if( MenuLClick() && MenuNVidUnderCursor()==956 )
+  {
+    Effect(EFF_FADE,0);
+    nextmap="buy";
+  }
+  else if( MenuLClick() || GetKey() || (GetInputState()&(INPUT_LCLICK|INPUT_RCLICK)) )
+  {
+    Effect(EFF_FADE,0);
+    nextmap="continue";
+  }
+}

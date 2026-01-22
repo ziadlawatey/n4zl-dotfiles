@@ -1,0 +1,31 @@
+#define MUSIC0 "music\\mus01.ogg"
+#define MUSIC1 "music\\mus02.ogg"
+
+#include "maps\export.lgc"
+#include "maps\common.lgc"
+#include "maps\common_compaign.lgc"
+
+
+
+main()
+{
+  int i;
+  iff(1)
+    InitGame();
+  if( GameTact() )
+    return;
+  CompaignGameTact();
+  iff( SizeTo(Flagman(0),2004,2573) < 80 )
+  {
+    //смена точки перерождения для игрока
+    StartPlayerX=GetX(Flagman(0)); StartPlayerY=GetY(Flagman(0)); StartPlayerZ=GetZ(Flagman(0));
+  }
+  if( Flagman(0) )
+  {
+    static int win = 0;
+    iff ( GetVidData(179,VID_COUNT)==0 )//если не осталось мест для закладки динамита
+        win = GetTime();
+    iff( win && (GetTime() - win) > 5000 )
+        Win();
+  }  
+}

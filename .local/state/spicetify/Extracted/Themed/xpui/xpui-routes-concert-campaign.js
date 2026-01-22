@@ -1,0 +1,2 @@
+"use strict";(("undefined"!=typeof self?self:global).webpackChunkclient_web=("undefined"!=typeof self?self:global).webpackChunkclient_web||[]).push([[7320],{59960:(e,n,s)=>{s.r(n),s.d(n,{default:()=>c});var a=s(85387),d=s(39329),l=s(80128),r=s(34649),t=s(86070);const c=()=>{const{concertCampaignId:e}=(0,a.g)();return e?(0,t.jsx)(r.eZ,{pageId:d.$.CONCERTS,children:(0,t.jsx)("div",{style:{padding:"24px"}})}):(0,t.jsx)(l.LoadingPage,{hasError:!1,errorMessage:""})}}}]);
+//# sourceMappingURL=xpui-routes-concert-campaign.js.map
