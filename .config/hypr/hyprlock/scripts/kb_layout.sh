@@ -19,4 +19,6 @@ else
 fi
 
 # take first two letters, uppercase → EN / AR automatically
-echo "${layout:0:2}" | tr '[:lower:]' '[:upper:]'
+result="${layout:0:2}"
+[ -z "$result" ] && exit 0  # safety check
+echo "$result" | tr '[:lower:]' '[:upper:]'

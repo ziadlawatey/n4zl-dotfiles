@@ -4,15 +4,15 @@
   min-height: 0;
   font-family: "Slate For One Plus";
   font-weight: 400;
-  border-radius: 23px;
+  border-radius: 11px;
   margin: 0;
   padding: 0;
+  border: none;
 }
 
 window#waybar {
   background: #1e1d1f;
-  /* background: rgba(47, 49, 53, 0.744); */
-  transition-duration: 0.5s;
+  border-radius: 15px;
 }
 
 window#waybar.empty #window {
@@ -22,7 +22,7 @@ window#waybar.empty #window {
 #workspaces button {
   margin: 0 1px;
   padding: 0 2px;
-  border-radius: 16px;
+  border-radius: 15px;
   color: #cdd6f4;
   background-color: #636067;
   transition: all 0.3s ease-in-out;
@@ -39,77 +39,107 @@ window#waybar.empty #window {
   background-color: #cdd6f4;
   color: #2f354a;
   min-width: 35px;
-  background-size: 300% 300%;
 }
 
 #workspaces button:hover {
   background-color: @primary;
   color: #2f354a;
   min-width: 35px;
-  background-size: 400% 400%;
 }
 
 #custom-weather {
   font-size: 0.94em;
   padding: 1px 6px 0;
   background-color: #2b292f;
-  margin: 7px 0;
+  margin: 5px 0;
 }
 
-/* #memory,
-#custom-power,
-#battery,
-#backlight,
-#wireplumber,
-#network, */
 #tray {
-  padding: 0.5px 6px;
+  padding: 1px 11px 0;
   background-color: #2b292f;
-  margin: 7px 0;
+  margin: 5px 0;
 }
 
-#tray > .active {
-  margin: 50px 1px;
-  padding: 20px 2px;
-  background-color: #636067;
-  /* padding: 0.5px 10px 0; */
+#custom-notifications {
+  padding: 1px 12px 0 10px;
+  background-color: #2b292f;
+  margin: 5px 0;
 }
-
-/* #tray .icons {
-  margin: 10px 0;
-} */
 
 #clock {
   font-size: 0.94em;
   padding: 1px 6px 0 8px;
   background-color: #2b292f;
-  margin: 7px 0;
+  margin: 5px 0;
 }
 
 #workspaces {
+  /* border-radius: 11px; */
   padding: 5px;
   background-color: #2b292f;
-  margin: 7px 0 7px 6px;
+  margin: 5px 0 5px 5px;
 }
 
 #window {
   padding: 1px 10px 0;
   background-color: #2b292f;
-  margin: 7px 8px 7px 0;
+  margin: 5px 8px 5px 0;
   font-size: 13px;
 }
 
 #custom-power {
   margin-right: 6px;
 }
+#werki {
+  padding: 1px 10px 0;
+  background-color: #2b292f;
+  margin: 5px 5px 5px 0;
+  font-size: 13px;
+}
+
+#battery {
+  padding: 1px 10px 0;
+  background-color: #2b292f;
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+#tray menu {
+  background-color: #2b292f;
+  padding: 4px 0px;
+  border-radius: 12px;
+  font-size: 0.9em;
+}
+
+#tray menu menuitem {
+  background-color: transparent;
+  margin: 1px 5px;
+  padding: 5px 0;
+}
+
+#custom-keyboard {
+  padding: 1px 7px 0;
+  background-color: #2b292f;
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+#tray menu menuitem:hover {
+  background-color: #545356;
+}
+
+#tray menu separator {
+  margin: 5px 8px;
+  border-bottom: 1px solid #555;
+}
 
 tooltip {
-  border-radius: 8px;
-  padding: 15px;
-  background-color: #131822;
+  background: transparent;
+  border: none;
 }
 
 tooltip label {
-  padding: 5px;
-  background-color: #131822;
+  background-color: #2b292f;
+  padding: 10px;
+  border-radius: 15px;
 }

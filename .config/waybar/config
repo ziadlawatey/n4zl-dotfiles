@@ -1,26 +1,47 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-top": 5,
-  "margin-left": 5,
-  "margin-right": 5,
-  "height":   44,
-  "spacing": 5,
+  "margin-top": 7,
+  "margin-left": 7,
+  "margin-right": 7,
+  "height": 38,
+  "spacing": 4,
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
     "clock",
-  "custom/weather"
+    "custom/weather"
   ],
   "modules-right": [
+    // "power-profiles-daemon",
     "tray",
-    "memory",
-    "network",
-    "wireplumber",
-    "battery"
+    "custom/keyboard",
+    "custom/notifications",
+    "battery",
+    "group/werki"
   ],
+  "group/werki": {
+  "orientation": "horizontal",  // or "vertical"
+  "modules": [
+    "network",
+    "bluetooth",
+    "wireplumber"
+  ]
+},
+"bluetooth": {
+  "format": "󰂯",
+  "format-disabled": "󰂲",
+  "format-off": "󰂲",
+  "format-connected": "󰂱 {num_connections}",
+  "format-connected-battery": "󰂱 {device_battery_percentage}%",
+  "tooltip": true,
+  "tooltip-format": "Bluetooth: {status}",
+  "tooltip-format-connected": "{device_alias} ({device_battery_percentage}%)",
+  "on-click": "blueman-manager",
+  "on-click-right": "rfkill toggle bluetooth"
+},
   "wlr/taskbar": {
     "format": "{icon} {title}",
     "on-click": "activate",
@@ -29,17 +50,18 @@
     "icon-size": 25,
     "tooltip-format": "{title}"
   },
-  "memory": {
-    "interval": 5,
-    "format": "󰍛 {}%",
-    "max-length": 10
-  },
+  // "memory": {
+  //   "interval": 5,
+  //   "format": "󰍛 {}%",
+  //   "max-length": 10
+  // },
   "hyprland/window": {
     "format": "{title}",
     "max-length": 50,
     "separate-outputs": true,
     "icon": true,
-    "icon-size": 18
+    "icon-size": 18,
+    "tooltip": false
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -47,9 +69,9 @@
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "active": " ",
-      "default": " ",
-      "empty": " "
+      "urgent": "",
+      "active": "",
+      "default": ""
     },
     "persistent-workspaces": {
       "*": 4,
@@ -64,12 +86,33 @@
     }
   },
   "tray": {
-    "spacing": 10,
+    "spacing": 9,
     "icon-size": 15
   },
   "clock": {
-    "tooltip-format": "{calendar}",
-    "format": "{:%I:%M %p   •   %a %d} "
+    "format": "{:%I:%M %p  •  %a %d} ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'>{}</span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   },
   "network": {
     "format-wifi": "{icon}",
@@ -86,57 +129,64 @@
     "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "~/.config/rofi/wifi/wifi.sh &",
-    "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
+    // "on-click": "~/.config/rofi/wifi/wifi.sh &",
+    // "on-cl"
+    // "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
     "interval": 5,
     "nospacing": 1
   },
-  "wireplumber": {
-    "format": "{icon}",
-    "format-bluetooth": "󰂰",
-    "nospacing": 1,
-    "tooltip-format": "Volume : {volume}%",
-    "format-muted": "󰝟",
-    "format-icons": {
-      "headphone": "",
-      "default": [
-        "󰖀",
-        "󰕾",
-        ""
-      ]
-    },
-    "on-click": "pamixer -t",
-    "scroll-step": 1
+  "custom/notifications": {
+  "exec": "swaync-client -swb",
+  "return-type": "json",
+  "format": "{icon}",
+  "format-icons": {
+    "notification": "󰂚",  // Filled bell when there are notifications
+    "none": "󰂜",          // Empty bell when no notifications
+    "dnd-notification": "󰂛",  // Bell with slash when DND is on
+    "dnd-none": "󰪑"
+  },
+  "tooltip": false,
+  "on-click": "swaync-client -t -sw",
+  "on-click-right": "swaync-client -d -sw"
+},
+"wireplumber": {
+  "format": "{icon} {volume}%",
+  "format-muted": "󰝟",
+  "format-icons": {
+    "headphone": "󰋋",
+    "hands-free": "󰋎",
+    "headset": "󰋎",
+    "phone": "",
+    "portable": "",
+    "car": "",
+    "hifi": "󰓃",
+    "speaker": "󰓃",
+    "hdmi": "󰡁",
+    "default": ["󰕿", "󰖀", "󰕾"]
+  },
+  "tooltip": true,
+  "tooltip-format": "{volume%}"
+  // "on-click": "pavucontrol",
+  // "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "battery": {
-    "format": "{capacity}% {icon}",
+    "format": "{icon}  {capacity}%",
     "format-icons": {
-      "charging": [
-        "󰢜",
-        "󰂆",
-        "󰂇",
-        "󰂈",
-        "󰢝",
-        "󰂉",
-        "󰢞",
-        "󰂊",
-        "󰂋",
-        "󰂅"
-      ],
-      "default": [
-        "󰁺",
-        "󰁻",
-        "󰁼",
-        "󰁽",
-        "󰁾",
-        "󰁿",
-        "󰂀",
-        "󰂁",
-        "󰂂",
-        "󰁹"
-      ]
+"charging": "󱐋",  // Lightning bolt in battery
+"default": [
+  "󰂎",  // 0-10% critical
+  "󰁺",  // 10-20% low
+  "󰁻",  // 20-30%
+  "󰁼",  // 30-40%
+  "󰁽",  // 40-50%
+  "󰁾",  // 50-60%
+  "󰁿",  // 60-70%
+  "󰂀",  // 70-80%
+  "󰂁",  // 80-90%
+  "󰂂"   // 90-100% full
+]
     },
-    "format-full": "Charged ",
+    // "format-full": "Charged ",
     "interval": 5,
     "states": {
       "warning": 20,
@@ -151,11 +201,18 @@
   //   "on-scroll-up": "playerctl next",
   //   "on-scroll-down": "playerctl previous"
   // }
-"custom/weather": {
+  "custom/weather": {
     "format": "{} °",
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar",
     "return-type": "json"
-}
+  },
+  "custom/keyboard": {
+    "exec": "~/.config/hypr/hyprlock/scripts/kb_layout.sh",
+    "interval": 1,
+    "format": "{}",
+    "tooltip": false,
+    "on-click": " hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  }
 }
