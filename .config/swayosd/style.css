@@ -1,41 +1,41 @@
 @import url("colors.css");
 
-window {
-    padding: 0;
-    border-radius: 20px;
-    /*border: solid 1px #1b1d1d;*/
-    /*background: alpha(black, 0.75);*/
-    background: @surface_bright;
+* {
+  font-family: "SF Pro Display", sans-serif;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+window#osd {
+  padding: 10px 20px 10px 15px;
+  border-radius: 18px;
+  background: @surface_container;
 }
 
 #container {
-    margin: 10px;
+  margin: 0;
 }
 
-image, label {
-    color: @theme_fg_color;
-}
-
-progressbar:disabled,
-image:disabled {
-    opacity: 0.5;
+image {
+  color: @on_primary_container;
 }
 
 progressbar {
-    min-height: 5px;
-    border-radius: 999px;
-    background: transparent;
-    border: none;
+  min-width: 200px;
+  min-height: 6px;
+  border-radius: 99px;
 }
-trough {
-    min-height: inherit;
-    border-radius: inherit;
-    border: none;
-    background: alpha(@theme_fg_color, 0.5);
+
+progressbar trough {
+  background: @surface_container_high;
+  border-radius: 99px;
+  min-height: 6px;
 }
-progress {
-    min-height: inherit;
-    border-radius: inherit;
-    border: none;
-    background: @theme_fg_color;
+
+progressbar progress {
+  background: @on_primary_container;
+  border-radius: 99px;
+  min-height: 6px;
+  min-width: 0;
 }

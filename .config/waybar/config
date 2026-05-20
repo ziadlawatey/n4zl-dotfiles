@@ -7,7 +7,7 @@
   "height": 28,
   "spacing": 5,
   "modules-left": [
-    "custom/launcher",
+    "image",
     "custom/media_player"
   ],
   "modules-center": [
@@ -157,10 +157,10 @@
     "format": "{}",
     "tooltip": true
   },
-  "custom/launcher": {
-    "format": "󰀻",
-    "on-click": "~/.config/rofi/scripts/launch_options.sh launcher",
-    "tooltip": true,
-    "tooltip-format": "Launcher"
-  }
+"image": {
+    "exec": "~/.config/waybar/scripts/launcher_image.sh",
+    "size": 20,
+    "interval": 3600,
+    "on-click": "~/.config/rofi/scripts/launch_options.sh launcher"
+}
 }

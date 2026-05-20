@@ -24,11 +24,11 @@ output_path = '~/.config/cava/themes/matugen.ini'
 post_hook = "pkill -USR1 cava"
 
 [templates.gtk3]
-input_path = './templates/gtk.css'
+input_path = './templates/apps/gtk.css'
 output_path = '~/.config/gtk-3.0/gtk.css'
 
 [templates.gtk4]
-input_path = './templates/gtk.css'
+input_path = './templates/apps/gtk.css'
 output_path = '~/.config/gtk-4.0/gtk.css'
 
 [templates.hyprlock]
@@ -60,16 +60,27 @@ input_path = './templates/terminal/neovim.lua'
 output_path = '~/.config/nvim/colors.lua'
 
 [templates.qt5ct]
-input_path = './templates/qtct.conf'
+input_path = './templates/apps/qtct.conf'
 output_path = '~/.config/qt5ct/colors/matugen.conf'
 
 [templates.qt6ct]
-input_path = './templates/qtct.conf'
+input_path = './templates/apps/qtct.conf'
 output_path = '~/.config/qt6ct/colors/matugen.conf'
 
-[templates.arch_logo]
+[templates.arch_logo_fastfetch]
 input_path = './templates/arch.svg'
-output_path = '/tmp/arch.svg'
+output_path = '~/.config/fastfetch/logo/arch.svg'
+post_hook = 'magick -background transparent ~/.config/fastfetch/logo/arch.svg ~/.config/fastfetch/logo/arch.png'
+
+[templates.arch_logo_waybar]
+input_path = './templates/arch.svg'
+output_path = '~/.config/waybar/arch.svg'
+post_hook = 'pkill waybar && waybar & disown'
+
+[templates.swayosd]
+input_path  = "~/.config/matugen/templates/swayosd.css"
+output_path = "~/.config/swayosd/colors.css"
+post_hook   = "pkill swayosd-server; swayosd-server & disown"
 
 #[templates.swaync]
 #input_path = "./templates/swaync.css"
